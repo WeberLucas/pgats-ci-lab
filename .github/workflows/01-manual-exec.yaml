@@ -8,25 +8,26 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # clone do projeto
+      # Clone do projeto
       - uses: actions/checkout@v4
 
-      # instalando node
+      # Instalando Node.js
       - uses: actions/setup-node@v4
         with:
           node-version: 22.x
 
-      # instalando yarn
-      - name: Instalando YARN
+      # Instalando Yarn
+      - name: Instalando Yarn
         run: npm install -g yarn
 
-      #isntalando dependencias
-      - name: instalando dependencias
+      # Instalando dependências
+      - name: Instalando dependências
         run: yarn
 
-        #instalacao playwrigth
-      - name: instalcao play
+      # Instalando Playwright
+      - name: Instalando Playwright
         run: yarn playwright install
 
-      - name: executando os testes
-        run: yarn run e2e  
+      # Executando os testes
+      - name: Executando os testes
+        run: yarn run e2e
