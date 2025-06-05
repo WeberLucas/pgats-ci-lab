@@ -1,0 +1,32 @@
+name: 'execucao manual'
+
+on:
+  workflow_dispatch:
+
+jobs:
+  e2e-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      # clone do projeto
+      - uses: actions/checkout@v4
+
+      # instalando node
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22.x
+
+      # instalando yarn
+      - name: Instalando YARN
+        run: npm install -g yarn
+
+      #isntalando dependencias
+      - name: instalando dependencias
+        run: yarn
+
+        #instalacao playwrigth
+      - name: instalcao play
+        run: yarn playwright install
+
+      - name: executando os testes
+        run: yarn run e2e  
