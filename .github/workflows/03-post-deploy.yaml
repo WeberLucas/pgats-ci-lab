@@ -1,4 +1,4 @@
-name: 'execucao manualaaa'
+name: 'execucao por deploy'
 
 on:
   workflow_run:
