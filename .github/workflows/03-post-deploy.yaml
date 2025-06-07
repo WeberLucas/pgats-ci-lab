@@ -6,7 +6,6 @@ on:
     types:
       - completed
 
-
 jobs:
   e2e-tests:
     runs-on: ubuntu-latest
@@ -37,9 +36,9 @@ jobs:
       # Executando os testes
       - name: Executando os testes
         run: yarn run e2e
-        
+
       - uses: actions/upload-artifact@v4
         if: ${{ !cancelled() }}
         with:
-          name: report 
+          name: report
           path: ./playwright-report
