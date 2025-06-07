@@ -36,3 +36,25 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      
+      # Instalando Node.js
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22.x
+
+      # Instalando Yarn
+      - name: Instalando Yarn
+        run: npm install -g yarn
+
+      # Instalando dependências
+      - name: Instalando dependências
+        run: yarn
+
+      # Instalando Playwright
+      - name: Instalando Playwright
+        run: yarn playwright install
+
+      # Executando os testes
+      - name: Executando os testes
+        run: yarn run e2e
+
